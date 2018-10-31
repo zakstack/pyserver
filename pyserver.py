@@ -10,13 +10,6 @@ env = {}
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
 PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
 
-#Only needs to be used if you are not importing a env.txt
-def bootstrap():
-    print("Bootstraping intitial state")
-    g = open("env.txt","w")
-    g.write(str(env))
-    g.close()
-
 #You can put things that run before or after the main loop here
 def start():
     print("Starting Service")
@@ -82,14 +75,6 @@ def rdebug(target):
     global env
     if(env["debug_flag"] == "True"):
         print(target)
-
-#These are the bootstrap arguments and should only be uncommented when boostrapping
-# env = \
-# {
-#     "turn_on_flag" : "True"
-# }
-#bootstrap()
-
 
 #INIT
 start()
